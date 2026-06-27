@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel &amp; Chloe — We're Getting Married</title>
+<meta name="description" content="Join Daniel Slack and Chloe Bennett as they celebrate their wedding. RSVP, find venue details, the schedule, gallery and more — all in one place.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daniel & Chloe — We're Getting Married">
+<meta property="og:description" content="Join us as we celebrate our wedding. RSVP and find all the details here.">
+<meta property="og:image" content="https://example.com/og-image.jpg"> <!-- EDIT: replace with a real 1200x630 photo URL once hosted -->
+<meta property="og:url" content="https://example.com"> <!-- EDIT: replace with your live site URL -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Daniel & Chloe — We're Getting Married">
+<meta name="twitter:description" content="Join us as we celebrate our wedding. RSVP and find all the details here.">
+<meta name="twitter:image" content="https://example.com/og-image.jpg"> <!-- EDIT -->
+
+<link rel="canonical" href="https://example.com"> <!-- EDIT -->
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<!--
+  SCHEMA.ORG STRUCTURED DATA — WeddingEvent
+  ------------------------------------------------------------
+  Left commented out deliberately: search engines should never
+  index placeholder dates/locations. Once your date and venue
+  are confirmed, fill in the fields below and remove the
+  surrounding <!-- and --> comment markers.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WeddingEvent",
+  "name": "Daniel Slack & Chloe Bennett's Wedding",
+  "startDate": "YYYY-MM-DDTHH:MM",
+  "location": {
+    "@type": "Place",
+    "name": "VENUE NAME",
+    "address": "FULL VENUE ADDRESS"
+  },
+  "description": "Celebrating the marriage of Daniel Slack and Chloe Bennett."
+}
+</script>
+-->
+</head>
+<body data-theme="light">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===================== Loading screen ===================== -->
+<div id="loading-screen" aria-hidden="true">
+  <svg class="monogram" viewBox="0 0 100 100" aria-hidden="true">
+    <circle class="monogram-circle" cx="50" cy="50" r="40" />
+  </svg>
+</div>
+
+<!-- ===================== Nav ===================== -->
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+  <div class="container">
+    <a href="#main" class="nav-brand">D&amp;C</a>
+
+    <ul class="nav-links">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#info">Good to Know</a></li>
+      <li><a href="#guestbook">Guestbook</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span class="line"></span><span class="line"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<div class="nav-drawer" id="nav-drawer" aria-label="Mobile menu">
+  <ul>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#info">Good to Know</a></li>
+    <li><a href="#guestbook">Guestbook</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- ===================== Hero ===================== -->
+  <section class="hero">
+    <div class="hero-photo-placeholder" aria-hidden="true"></div>
+    <!-- EDIT: once you have an engagement photo, replace .hero-photo-placeholder above with:
+         <img class="hero-photo" src="photos/hero.jpg" alt="Daniel and Chloe smiling together outdoors"> -->
+    <div class="hero-bg has-photo" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <svg class="monogram monogram--animate" id="hero-monogram" viewBox="0 0 100 100" aria-hidden="true" width="96" height="96">
+        <circle class="monogram-circle" cx="50" cy="50" r="40" />
+        <text class="monogram-letters" x="50" y="58" font-size="30" text-anchor="middle">D&amp;C</text>
+      </svg>
+      <span class="eyebrow" id="hero-eyebrow">Save the date — coming soon</span>
+      <h1>Daniel <span class="amp">&amp;</span> Chloe</h1>
+      <p class="hero-sub" id="hero-date-line">We're getting married — details to follow soon.</p>
+
+      <div class="countdown" id="countdown" hidden>
+        <div class="countdown-item"><span class="num" id="cd-days">00</span><span class="cd-label">Days</span></div>
+        <div class="countdown-item"><span class="num" id="cd-hours">00</span><span class="cd-label">Hours</span></div>
+        <div class="countdown-item"><span class="num" id="cd-mins">00</span><span class="cd-label">Mins</span></div>
+        <div class="countdown-item"><span class="num" id="cd-secs">00</span><span class="cd-label">Secs</span></div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===================== Our Story ===================== -->
+  <section id="story">
+    <div class="container">
+      <div class="story-grid reveal">
+        <div class="story-photo">
+          <div class="ph-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+          </div>
+          <!-- EDIT: swap this placeholder block for <img src="photos/story.jpg" alt="..."> -->
+        </div>
+        <div class="story-text">
+          <span class="eyebrow">Our Story</span>
+          <h2>How it began</h2>
+          <p><!-- EDIT: replace with your real story --> What started as a chance introduction turned into something neither of us expected. Daniel will tell you it was the conversation that wouldn't end; Chloe will tell you it was the terrible joke that somehow worked. However it happened, here we are — and we couldn't be happier to share the next chapter with the people we love most.</p>
+          <p>This space is yours to fill with the small details that made it real: the first trip, the proposal, the in-between moments. Replace this paragraph with your own words whenever you're ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Details (date/venue) ===================== -->
+  <section id="details" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-head reveal">
+        <svg class="monogram divider-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+        <span class="eyebrow">The Details</span>
+        <h2>When &amp; Where</h2>
+      </div>
+
+      <div class="details-card reveal">
+        <p id="details-tba-message">We're still finalising the date and venue — this section will update automatically the moment they're confirmed. Want to be the first to know?</p>
+
+        <div class="details-grid" id="details-grid" hidden>
+          <div class="detail-item">
+            <span class="label">Date</span>
+            <span class="value" id="detail-date">—</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Venue</span>
+            <span class="value" id="detail-venue">—</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:1.5rem;">
+          <button class="btn" id="map-btn" disabled>View venue map</button>
+        </div>
+
+        <form class="notify-form" id="notify-form">
+          <label for="notify-email" class="visually-hidden">Email address</label>
+          <input type="email" id="notify-email" placeholder="you@example.com" required style="padding:13px 16px; border-radius:999px; border:1px solid var(--border); min-width:220px;">
+          <button type="submit" class="btn btn-primary">Notify me</button>
+        </form>
+        <p class="form-status" id="notify-status" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Schedule ===================== -->
+  <section id="schedule">
+    <div class="container">
+      <div class="section-head reveal">
+        <svg class="monogram divider-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+        <span class="eyebrow">Schedule</span>
+        <h2>The Day</h2>
+        <p>A rough running order — exact times will be confirmed closer to the date.</p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <svg class="timeline-dot" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="var(--gold)"/></svg>
+          <span class="timeline-time">Time TBA</span>
+          <h3>Ceremony</h3>
+          <p>Vows exchanged, surrounded by the people who matter most.</p>
+        </div>
+        <div class="timeline-item">
+          <svg class="timeline-dot" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="var(--gold)"/></svg>
+          <span class="timeline-time">Time TBA</span>
+          <h3>Drinks &amp; Photos</h3>
+          <p>A relaxed gap to toast the day and take some photos.</p>
+        </div>
+        <div class="timeline-item">
+          <svg class="timeline-dot" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="var(--gold)"/></svg>
+          <span class="timeline-time">Time TBA</span>
+          <h3>Reception</h3>
+          <p>Dinner, speeches, and the first dance.</p>
+        </div>
+        <div class="timeline-item">
+          <svg class="timeline-dot" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="var(--gold)"/></svg>
+          <span class="timeline-time">Time TBA</span>
+          <h3>Party</h3>
+          <p>Dancing until the night winds down.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Gallery ===================== -->
+  <section id="gallery" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-head reveal">
+        <svg class="monogram divider-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+        <span class="eyebrow">Gallery</span>
+        <h2>A Few Of Our Favourites</h2>
+      </div>
+
+      <div class="gallery reveal" id="gallery-grid">
+        <!-- EDIT: each .gallery-item below is a placeholder. Once you have engagement photos,
+             replace the inner <div class="ph-icon">...</div> with:
+             <img src="photos/your-photo.jpg" alt="Describe the photo" loading="lazy">
+             Keep the "tall" class on a couple of items for a varied masonry rhythm. -->
+        <div class="gallery-item tall" data-lightbox><div class="ph-icon">📷</div></div>
+        <div class="gallery-item" data-lightbox><div class="ph-icon">📷</div></div>
+        <div class="gallery-item" data-lightbox><div class="ph-icon">📷</div></div>
+        <div class="gallery-item" data-lightbox><div class="ph-icon">📷</div></div>
+        <div class="gallery-item tall" data-lightbox><div class="ph-icon">📷</div></div>
+        <div class="gallery-item" data-lightbox><div class="ph-icon">📷</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RSVP ===================== -->
+  <section id="rsvp">
+    <div class="container">
+      <div class="section-head reveal">
+        <svg class="monogram divider-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+        <span class="eyebrow">RSVP</span>
+        <h2>Let Us Know You're Coming</h2>
+        <p>Please respond by the date we'll confirm soon — we'll update this page once it's set.</p>
+      </div>
+
+      <form class="rsvp-card reveal" id="rsvp-form" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="rsvp-name">Full name *</label>
+            <input type="text" id="rsvp-name" name="name" required autocomplete="name">
+            <span class="error-text" id="err-name"></span>
+          </div>
+          <div class="form-field">
+            <label for="rsvp-email">Email *</label>
+            <input type="email" id="rsvp-email" name="email" required autocomplete="email">
+            <span class="error-text" id="err-email"></span>
+          </div>
+          <div class="form-field">
+            <label for="rsvp-phone">Phone</label>
+            <input type="tel" id="rsvp-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="rsvp-guests">Number of guests (incl. you) *</label>
+            <input type="number" id="rsvp-guests" name="guests" min="1" max="10" value="1" required>
+          </div>
+
+          <div class="form-field full">
+            <label>Will you be attending? *</label>
+            <div class="radio-group" role="radiogroup" aria-required="true">
+              <label><input type="radio" name="attendance" value="yes" required> Joyfully attending</label>
+              <label><input type="radio" name="attendance" value="no"> Sadly can't make it</label>
+            </div>
+            <span class="error-text" id="err-attendance"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="rsvp-meal">Meal choice</label>
+            <select id="rsvp-meal" name="meal">
+              <option value="">Select…</option>
+              <option value="chicken">Chicken</option>
+              <option value="fish">Fish</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="rsvp-song">Song request</label>
+            <input type="text" id="rsvp-song" name="song_request" placeholder="A track that'll get you dancing">
+          </div>
+
+          <div class="form-field full">
+            <label for="rsvp-dietary">Dietary or accessibility requirements</label>
+            <textarea id="rsvp-dietary" name="dietary" rows="2"></textarea>
+          </div>
+          <div class="form-field full">
+            <label for="rsvp-message">Message for Daniel &amp; Chloe</label>
+            <textarea id="rsvp-message" name="message" rows="3"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit" id="rsvp-submit">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-label">Send RSVP</span>
+        </button>
+        <p class="form-status" id="rsvp-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== Good to Know (FAQ / dress code / gifts / accommodation / travel) ===================== -->
+  <section id="info" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-head reveal">
+        <svg class="monogram divider-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+        <span class="eyebrow">Good to Know</span>
+        <h2>Everything Else</h2>
+      </div>
+
+      <div class="accordion reveal">
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-dresscode">Dress Code <span class="icon">+</span></button>
+          <div class="accordion-panel" id="panel-dresscode">
+            <div class="accordion-panel-inner">
+              <p><!-- EDIT --> Smart, elegant attire in keeping with the season. Think soft, natural tones — we'd love it if you avoided pure white. More specific guidance will follow once the venue is confirmed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-gifts">Gifts <span class="icon">+</span></button>
+          <div class="accordion-panel" id="panel-gifts">
+            <div class="accordion-panel-inner">
+              <p><!-- EDIT --> Your presence is truly the only gift we need. For those who'd still like to mark the occasion, details for a honeymoon fund will be shared closer to the date.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-accommodation">Accommodation <span class="icon">+</span></button>
+          <div class="accordion-panel" id="panel-accommodation">
+            <div class="accordion-panel-inner">
+              <p><!-- EDIT --> Recommended places to stay will be listed here once the venue is locked in, including any room blocks we arrange for guests.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-travel">Travel <span class="icon">+</span></button>
+          <div class="accordion-panel" id="panel-travel">
+            <div class="accordion-panel-inner">
+              <p><!-- EDIT --> Getting there — nearest airports, train stations, and parking notes — will be added here as soon as the venue is confirmed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-faq">FAQ <span class="icon">+</span></button>
+          <div class="accordion-panel" id="panel-faq">
+            <div class="accordion-panel-inner">
+              <ul>
+                <li><!-- EDIT --><strong>Can I bring a plus-one?</strong> Please check your invitation — if a guest is named, they're more than welcome.</li>
+                <li><strong>Are kids welcome?</strong> We'll confirm closer to the date.</li>
+                <li><strong>What if my plans change?</strong> Just use the RSVP form again with the same email to update your response.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Guestbook ===================== -->
+  <section id="guestbook">
+    <div class="container">
+      <div class="section-head reveal">
+        <svg class="monogram divider-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+        <span class="eyebrow">Guestbook</span>
+        <h2>Leave Us a Note</h2>
+      </div>
+
+      <form class="guestbook-form reveal" id="guestbook-form">
+        <div class="form-field">
+          <label for="gb-name" class="visually-hidden">Your name</label>
+          <input type="text" id="gb-name" placeholder="Your name" required>
+        </div>
+        <div class="form-field">
+          <label for="gb-message" class="visually-hidden">Your message</label>
+          <textarea id="gb-message" rows="2" placeholder="Leave a note for Daniel & Chloe" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post note</button>
+        <p class="form-status" id="guestbook-status" role="status"></p>
+      </form>
+
+      <div class="guestbook-wall reveal" id="guestbook-wall">
+        <p class="guestbook-empty">Be the first to leave a note.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="site-footer">
+  <svg class="monogram footer-monogram" viewBox="0 0 100 100" aria-hidden="true"><circle class="monogram-circle" cx="50" cy="50" r="40" /></svg>
+  <p class="footer-hashtag">#DanielAndChloe</p>
+  <p class="footer-fine">Made with love by Daniel &amp; Chloe · <span id="footer-year"></span></p>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
